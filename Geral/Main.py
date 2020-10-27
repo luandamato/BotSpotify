@@ -32,16 +32,17 @@ class PlaylistUltimato:
         self.senha = ""
 
     def obterInfos(self):
-        self.DeveUsarLoginFacebook = False
-        self.email = "luandamato@gmail.com"
-        self.senha = "Luan-2121"
-        self.link_spofity = "https://open.spotify.com/playlist/0ac71TW9B8eyrSKN16sbk0"
-        self.nome_playlist_nova = "Minha playlist nº 5"
-        # if pyautogui.confirm('Como deseja fazer login?', "Login", ['Spotfy', 'Facebook']) == "Facebook":
-        #     self.DeveUsarLoginFacebook = True
-        # self.email = pyautogui.prompt('Qual de nome de Usuario?')
-        # self.senha = pyautogui.password('Qual sua senha?')
-        # self.link_spofity = pyautogui.password('Qual playlist?')
+        # self.DeveUsarLoginFacebook = False
+        # self.email = "email@email.com"
+        # self.senha = "senha123"
+        # self.link_spofity = "https://open.spotify.com/playlist/0ac71TW9B8eyrSKN16sbk0"
+        # self.nome_playlist_nova = "Minha playlist"
+        if pyautogui.confirm('Como deseja fazer login?', "Login", ['Spotfy', 'Facebook']) == "Facebook":
+            self.DeveUsarLoginFacebook = True
+        self.email = pyautogui.prompt('Qual de nome de Usuario?')
+        self.senha = pyautogui.password('Qual sua senha?')
+        self.link_spofity = pyautogui.prompt('Qual o link da playlist origem?')
+        self.nome_playlist_nova = pyautogui.prompt('Qual o nome da playlist destino?')
         #https: // open.spotify.com / playlist / 0ac71TW9B8eyrSKN16sbk0
 
     def Start(self):
